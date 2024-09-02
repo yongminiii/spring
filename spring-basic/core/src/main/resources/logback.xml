@@ -1,0 +1,17 @@
+<!--
+    Log Level 문제로 인해 생성한 파일
+    스프링 3.1 버전 이상부터는 기본 로그 레벨이 INFO로 설정되어 있기 때문에 DEBUG 레벨의 로그가 기본적으로 출력되지 않는다.
+    해당 파일을 이용해서 로그 레벨을 DEBUG로 설정
+-->
+
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
