@@ -15,18 +15,25 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
+    /**
+     * ConfigurationSIngletonTest
+     */
+    // ConfigurationSIngletonTest Start
     // @Bean memberService -> new MemoryMemberRepository()
     // @Bean orderService -> new MemoryMemberRepository()
 
+    // 예상
     // call AppConfig.memberService
     // call AppConfig.memberRepository
     // call AppConfig.memberRepository
     // call AppConfig.orderService
     // call AppConfig.memberRepository
 
+    // 실제로
     // call AppConfig.memberService
     // call AppConfig.memberRepository
     // call AppConfig.orderService
+    // ConfigurationSIngletonTest End
 
     @Bean
     public MemberService memberService() {
